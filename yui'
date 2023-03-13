@@ -1,0 +1,218 @@
+[1mdiff --git a/app/Providers/RouteServiceProvider.php b/app/Providers/RouteServiceProvider.php[m
+[1mindex ea87f2e..52dabc1 100644[m
+[1m--- a/app/Providers/RouteServiceProvider.php[m
+[1m+++ b/app/Providers/RouteServiceProvider.php[m
+[36m@@ -17,7 +17,7 @@[m [mclass RouteServiceProvider extends ServiceProvider[m
+      *[m
+      * @var string[m
+      */[m
+[31m-    public const HOME = '/home';[m
+[32m+[m[32m    public const HOME = '/dashboard';[m
+ [m
+     /**[m
+      * Define your route model bindings, pattern filters, and other route configuration.[m
+[1mdiff --git a/composer.json b/composer.json[m
+[1mindex 024809f..98d9c8b 100644[m
+[1m--- a/composer.json[m
+[1m+++ b/composer.json[m
+[36m@@ -13,6 +13,7 @@[m
+     },[m
+     "require-dev": {[m
+         "fakerphp/faker": "^1.9.1",[m
+[32m+[m[32m        "laravel/breeze": "^1.19",[m
+         "laravel/pint": "^1.0",[m
+         "laravel/sail": "^1.0.1",[m
+         "mockery/mockery": "^1.4.4",[m
+[1mdiff --git a/composer.lock b/composer.lock[m
+[1mindex 776083a..775dc90 100644[m
+[1m--- a/composer.lock[m
+[1m+++ b/composer.lock[m
+[36m@@ -4,7 +4,7 @@[m
+         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",[m
+         "This file is @generated automatically"[m
+     ],[m
+[31m-    "content-hash": "fe33f98a750b8c5a51b30c78bd3fab21",[m
+[32m+[m[32m    "content-hash": "5e1cbca5ce204b3b5f902c942ccbb14b",[m
+     "packages": [[m
+         {[m
+             "name": "brick/math",[m
+[36m@@ -5668,6 +5668,67 @@[m
+             },[m
+             "time": "2020-07-09T08:09:16+00:00"[m
+         },[m
+[32m+[m[32m        {[m
+[32m+[m[32m            "name": "laravel/breeze",[m
+[32m+[m[32m            "version": "v1.19.2",[m
+[32m+[m[32m            "source": {[m
+[32m+[m[32m                "type": "git",[m
+[32m+[m[32m                "url": "https://github.com/laravel/breeze.git",[m
+[32m+[m[32m                "reference": "725e0c4fb1f630afdd90b5fba2a7f6d8d547ac29"[m
+[32m+[m[32m            },[m
+[32m+[m[32m            "dist": {[m
+[32m+[m[32m                "type": "zip",[m
+[32m+[m[32m                "url": "https://api.github.com/repos/laravel/breeze/zipball/725e0c4fb1f630afdd90b5fba2a7f6d8d547ac29",[m
+[32m+[m[32m                "reference": "725e0c4fb1f630afdd90b5fba2a7f6d8d547ac29",[m
+[32m+[m[32m                "shasum": ""[m
+[32m+[m[32m            },[m
+[32m+[m[32m            "require": {[m
+[32m+[m[32m                "illuminate/console": "^9.21|^10.0",[m
+[32m+[m[32m                "illuminate/filesystem": "^9.21|^10.0",[m
+[32m+[m[32m                "illuminate/support": "^9.21|^10.0",[m
+[32m+[m[32m                "illuminate/validation": "^9.21|^10.0",[m
+[32m+[m[32m                "php": "^8.0.2"[m
+[32m+[m[32m            },[m
+[32m+[m[32m            "conflict": {[m
+[32m+[m[32m                "laravel/framework": "<9.37.0"[m
+[32m+[m[32m            },[m
+[32m+[m[32m            "type": "library",[m
+[32m+[m[32m            "extra": {[m
+[32m+[m[32m                "branch-alias": {[m
+[32m+[m[32m                    "dev-master": "1.x-dev"[m
+[32m+[m[32m                },[m
+[32m+[m[32m                "laravel": {[m
+[32m+[m[32m                    "providers": [[m
+[32m+[m[32m                        "Laravel\\Breeze\\BreezeServiceProvider"[m
+[32m+[m[32m                    ][m
+[32m+[m[32m                }[m
+[32m+[m[32m            },[m
+[32m+[m[32m            "autoload": {[m
+[32m+[m[32m                "psr-4": {[m
+[32m+[m[32m                    "Laravel\\Breeze\\": "src/"[m
+[32m+[m[32m                }[m
+[32m+[m[32m            },[m
+[32m+[m[32m            "notification-url": "https://packagist.org/downloads/",[m
+[32m+[m[32m            "license": [[m
+[32m+[m[32m                "MIT"[m
+[32m+[m[32m            ],[m
+[32m+[m[32m            "authors": [[m
+[32m+[m[32m                {[m
+[32m+[m[32m                    "name": "Taylor Otwell",[m
+[32m+[m[32m                    "email": "taylor@laravel.com"[m
+[32m+[m[32m                }[m
+[32m+[m[32m            ],[m
+[32m+[m[32m            "description": "Minimal Laravel authentication scaffolding with Blade and Tailwind.",[m
+[32m+[m[32m            "keywords": [[m
+[32m+[m[32m                "auth",[m
+[32m+[m[32m                "laravel"[m
+[32m+[m[32m            ],[m
+[32m+[m[32m            "support": {[m
+[32m+[m[32m                "issues": "https://github.com/laravel/breeze/issues",[m
+[32m+[m[32m                "source": "https://github.com/laravel/breeze"[m
+[32m+[m[32m            },[m
+[32m+[m[32m            "time": "2023-02-18T20:55:43+00:00"[m
+[32m+[m[32m        },[m
+         {[m
+             "name": "laravel/pint",[m
+             "version": "v1.6.0",[m
+[1mdiff --git a/package.json b/package.json[m
+[1mindex 0b32ba6..2b83bab 100644[m
+[1m--- a/package.json[m
+[1m+++ b/package.json[m
+[36m@@ -5,10 +5,16 @@[m
+         "build": "vite build"[m
+     },[m
+     "devDependencies": {[m
+[32m+[m[32m        "@tailwindcss/forms": "^0.5.2",[m
+[32m+[m[32m        "@tailwindcss/typography": "^0.5.9",[m
+[32m+[m[32m        "alpinejs": "^3.4.2",[m
+[32m+[m[32m        "autoprefixer": "^10.4.2",[m
+         "axios": "^1.1.2",[m
+[32m+[m[32m        "daisyui": "^2.51.3",[m
+         "laravel-vite-plugin": "^0.7.2",[m
+         "lodash": "^4.17.19",[m
+[31m-        "postcss": "^8.1.14",[m
+[32m+[m[32m        "postcss": "^8.4.6",[m
+[32m+[m[32m        "tailwindcss": "^3.1.0",[m
+         "vite": "^4.0.0"[m
+     }[m
+ }[m
+[1mdiff --git a/resources/css/app.css b/resources/css/app.css[m
+[1mindex e69de29..93551b9 100644[m
+[1m--- a/resources/css/app.css[m
+[1m+++ b/resources/css/app.css[m
+[36m@@ -0,0 +1,7 @@[m
+[32m+[m[32m@tailwind base;[m
+[32m+[m[32m@tailwind components;[m
+[32m+[m[32m@tailwind utilities;[m
+[32m+[m
+[32m+[m[32m@import 'tailwindcss/base';[m
+[32m+[m[32m@import 'tailwindcss/components';[m
+[32m+[m[32m@import 'tailwindcss/utilities';[m
+[1mdiff --git a/resources/js/app.js b/resources/js/app.js[m
+[1mindex e59d6a0..a8093be 100644[m
+[1m--- a/resources/js/app.js[m
+[1m+++ b/resources/js/app.js[m
+[36m@@ -1 +1,7 @@[m
+ import './bootstrap';[m
+[32m+[m
+[32m+[m[32mimport Alpine from 'alpinejs';[m
+[32m+[m
+[32m+[m[32mwindow.Alpine = Alpine;[m
+[32m+[m
+[32m+[m[32mAlpine.start();[m
+[1mdiff --git a/resources/views/welcome.blade.php b/resources/views/welcome.blade.php[m
+[1mindex 9faad4e..8e7595c 100644[m
+[1m--- a/resources/views/welcome.blade.php[m
+[1m+++ b/resources/views/welcome.blade.php[m
+[36m@@ -25,7 +25,7 @@[m
+             @if (Route::has('login'))[m
+                 <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">[m
+                     @auth[m
+[31m-                        <a href="{{ url('/home') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Home</a>[m
+[32m+[m[32m                        <a href="{{ url('/dashboard') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Dashboard</a>[m
+                     @else[m
+                         <a href="{{ route('login') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Log in</a>[m
+ [m
+[1mdiff --git a/routes/web.php b/routes/web.php[m
+[1mindex b130397..67fd3d6 100644[m
+[1m--- a/routes/web.php[m
+[1m+++ b/routes/web.php[m
+[36m@@ -1,5 +1,6 @@[m
+ <?php[m
+ [m
+[32m+[m[32muse App\Http\Controllers\ProfileController;[m
+ use Illuminate\Support\Facades\Route;[m
+ [m
+ /*[m
+[36m@@ -8,11 +9,23 @@[m
+ |--------------------------------------------------------------------------[m
+ |[m
+ | Here is where you can register web routes for your application. These[m
+[31m-| routes are loaded by the RouteServiceProvider within a group which[m
+[31m-| contains the "web" middleware group. Now create something great![m
+[32m+[m[32m| routes are loaded by the RouteServiceProvider and all of them will[m
+[32m+[m[32m| be assigned to the "web" middleware group. Make something great![m
+ |[m
+ */[m
+ [m
+ Route::get('/', function () {[m
+     return view('welcome');[m
+ });[m
+[32m+[m
+[32m+[m[32mRoute::get('/dashboard', function () {[m
+[32m+[m[32m    return view('dashboard');[m
+[32m+[m[32m})->middleware(['auth', 'verified'])->name('dashboard');[m
+[32m+[m
+[32m+[m[32mRoute::middleware('auth')->group(function () {[m
+[32m+[m[32m    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');[m
+[32m+[m[32m    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');[m
+[32m+[m[32m    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');[m
+[32m+[m[32m});[m
+[32m+[m
+[32m+[m[32mrequire __DIR__.'/auth.php';[m
+[1mdiff --git a/vite.config.js b/vite.config.js[m
+[1mindex 421b569..89f26f5 100644[m
+[1m--- a/vite.config.js[m
+[1m+++ b/vite.config.js[m
+[36m@@ -4,7 +4,10 @@[m [mimport laravel from 'laravel-vite-plugin';[m
+ export default defineConfig({[m
+     plugins: [[m
+         laravel({[m
+[31m-            input: ['resources/css/app.css', 'resources/js/app.js'],[m
+[32m+[m[32m            input: [[m
+[32m+[m[32m                'resources/css/app.css',[m
+[32m+[m[32m                'resources/js/app.js',[m
+[32m+[m[32m            ],[m
+             refresh: true,[m
+         }),[m
+     ],[m
