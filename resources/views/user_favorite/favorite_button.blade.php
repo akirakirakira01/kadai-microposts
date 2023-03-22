@@ -1,3 +1,4 @@
+
 @if (Auth::user()->is_favorite($micropost->id))
         {{-- アンフォローボタンのフォーム --}}
         <form method="POST" action="{{ route('favorites.unfavorite', $micropost->id) }}">
