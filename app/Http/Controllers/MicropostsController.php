@@ -20,12 +20,6 @@ class MicropostsController extends Controller
                 'microposts' => $microposts,
             ];
         }
-        
-        // dashboardビューでそれらを表示
-        return view('dashboard', $data);
-        
-        
-        
         // dashboardビューでそれらを表示
         return view('dashboard', $data);
     }
